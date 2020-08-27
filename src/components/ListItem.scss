@@ -1,0 +1,13 @@
+.list-item {
+  width: 90%;
+  &.selected {
+    background-color: greenyellow;
+  }
+  &:hover {
+    background-color: #2d355b;
+    color: aliceblue;
+  }
+  &__icon {
+    float: right;
+  }
+}
