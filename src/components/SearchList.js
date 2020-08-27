@@ -1,11 +1,10 @@
 import React from 'react'
-import { useDispatch, useSelector } from "react-redux";
-import { List } from 'react-virtualized'
+import { useDispatch, useSelector } from 'react-redux'
 import { Container, Header, Input, Dimmer, Loader, Segment } from 'semantic-ui-react'
+import { List } from 'react-virtualized'
 import ListItem from './ListItem'
 import { calculateFavoritesAmount } from '../util'
-import { selectedItem, setSelectedItem } from "../dataManager/generalSlice";
-import { selectFavorites } from '../dataManager/peopleSlice'
+import { selectedItem, setSelectedItem, selectFavorites } from '../dataManager/generalSlice'
 
 const SearchList = ({ items = [], listHeader = '', onFavoriteClick = false, status }) => {
   const objectItem = useSelector(selectedItem)

@@ -20,7 +20,7 @@ export const getUrl = (url) => {
 export const getAllPeople = async (key, { peopleUrlArray }) => {
   return await Promise.all(
     peopleUrlArray.map(async (url) => {
-      const response = await fetch(url)
+      const response = await fetch(url.replace('http', 'https'))
       return response.json()
     }),
   )

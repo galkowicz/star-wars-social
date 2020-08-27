@@ -14,18 +14,6 @@ export const peopleSlice = createSlice({
     status: 'idle',
     error: null,
   },
-  reducers: {
-    addToFavorites: (state, action) => {
-      const { favUrl, name } = action.payload
-
-      state.favorites = { ...state.favorites, [favUrl]: name }
-    },
-    removeFromFavorites: (state, action) => {
-      const { favUrl } = action.payload
-
-      state.favorites = { ...state.favorites, [favUrl]: false }
-    },
-  },
   extraReducers: {
     [fetchPeople.pending]: (state) => {
       state.status = 'loading'
@@ -41,9 +29,6 @@ export const peopleSlice = createSlice({
   },
 })
 
-export const { addToFavorites, removeFromFavorites } = peopleSlice.actions
-
 export const selectPeople = (state) => state.people
-export const selectFavorites = (state) => state.people.favorites
 
 export default peopleSlice.reducer

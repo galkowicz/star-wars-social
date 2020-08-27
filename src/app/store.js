@@ -17,19 +17,18 @@ const persistConfig = {
   key: 'root',
   version: 1,
   storage,
+  blacklist: ['species', 'people', 'planets'],
 }
 
 export const persistedReducer = persistReducer(persistConfig, rootReducer)
-
 
 export const store = configureStore({
   reducer: persistedReducer,
   middleware: getDefaultMiddleware({
     serializableCheck: {
-      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
-    }
-  })
+      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+    },
+  }),
 })
 
 export let persistor = persistStore(store)
-

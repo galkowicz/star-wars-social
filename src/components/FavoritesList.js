@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Header, List } from 'semantic-ui-react'
-import { selectFavorites } from '../dataManager/peopleSlice'
+import { selectFavorites } from '../dataManager/generalSlice'
 
 const FavoritesList = () => {
   const favorites = useSelector(selectFavorites)
