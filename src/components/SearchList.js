@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Container, Header, Input, Dimmer, Loader, Segment } from 'semantic-ui-react'
+import { CSVLink } from 'react-csv'
 import { List } from 'react-virtualized'
 import ListItem from './ListItem'
 import { calculateFavoritesAmount } from '../util'
@@ -71,6 +72,7 @@ const SearchList = ({ items = [], listHeader = '', onFavoriteClick = false, stat
           </Dimmer>
         )}
       </Segment>
+      {isDoneLoading && <CSVLink data={list}>Download list</CSVLink>}
     </Container>
   )
 }
