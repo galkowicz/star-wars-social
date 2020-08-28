@@ -72,7 +72,11 @@ const SearchList = ({ items = [], listHeader = '', onFavoriteClick = false, stat
           </Dimmer>
         )}
       </Segment>
-      {isDoneLoading && <CSVLink data={list}>Download list</CSVLink>}
+      {isDoneLoading && (
+        <CSVLink data={list} filename={`${listHeader.toLowerCase()}.csv`}>
+          Download list
+        </CSVLink>
+      )}
     </Container>
   )
 }
